@@ -12,7 +12,7 @@ module.exports = {
       { type: queryInterface.sequelize.QueryTypes.SELECT }
     ) // Podcasters = [{id:1}, {id:2}....]
     const list = []
-    Playlists.forEach(Playlist => {
+    await Playlists.forEach(Playlist => {
       for (let i = 0; i < 6; i++) {
         list.push(Playlist.id)
       }
@@ -20,7 +20,7 @@ module.exports = {
     await queryInterface.bulkInsert('PlaylistContents',
       Array.from({ length: list.length }, (_, index) => ({
         Playlist_id: list[index],
-        Podcaster_id: Podcasters[Math.floor(Math.random() * Podcasters.length - 1)].id,
+        Podcaster_id: Podcasters[Math.floor(Math.random() * Podcasters.length)].id,
         created_at: new Date(),
         updated_at: new Date()
       }))

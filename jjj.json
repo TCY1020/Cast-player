@@ -1,0 +1,60 @@
+{
+  "provider": "spotify",
+  "id": "31qkq5ojsq7cedj6b7q2ydh3zwsu",
+  "username": "31qkq5ojsq7cedj6b7q2ydh3zwsu",
+  "displayName": "蔡竹奕",
+  "profileUrl": "https://open.spotify.com/user/31qkq5ojsq7cedj6b7q2ydh3zwsu",
+  "photos": [
+    {
+      "value": "https://i.scdn.co/image/ab67757000003b82effc073974225eec27614922"
+    },
+    {
+      "value": "https://i.scdn.co/image/ab6775700000ee85effc073974225eec27614922"
+    }
+  ],
+  "country": "TW",
+  "followers": 0,
+  "product": "free",
+  "_raw":"{\n  \"display_name\" : \"蔡竹奕\",\n  \"external_urls\" : {\n    \"spotify\" : \"https://open.spotify.com/user/31qkq5ojsq7cedj6b7q2ydh3zwsu\"\n  },\n  \"href\" : \"https://api.spotify.com/v1/users/31qkq5ojsq7cedj6b7q2ydh3zwsu\",\n  \"id\" : \"31qkq5ojsq7cedj6b7q2ydh3zwsu\",\n  \"images\" : [ {\n   
+ \"url\" : \"https://i.scdn.co/image/ab67757000003b82effc073974225eec27614922\",\n    \"height\" : 64,\n    \"width\" : 64\n  }, {\n    \"url\" : \"https://i.scdn.co/image/ab6775700000ee85effc073974225eec27614922\",\n    \"height\" : 300,\n    \"width\" : 300\n  } ],\n  \"type\" : \"user\",\n  \"uri\" : \"spotify:user:31qkq5ojsq7cedj6b7q2ydh3zwsu\",\n  \"followers\" : {\n    \"href\" : null,\n    \"total\" : 0\n  },\n  \"country\" : \"TW\",\n  \"product\" : \"free\",\n  \"explicit_content\" : {\n    \"filter_enabled\" : false,\n   
+ \"filter_locked\" : false\n  },\n  \"email\" : \"a25023423@gmail.com\"\n}",
+  "_json": {
+    "display_name": "蔡竹奕",
+    "external_urls": {
+      "spotify": "https://open.spotify.com/user/31qkq5ojsq7cedj6b7q2ydh3zwsu"
+    },
+    "href": "https://api.spotify.com/v1/users/31qkq5ojsq7cedj6b7q2ydh3zwsu",
+    "id": "31qkq5ojsq7cedj6b7q2ydh3zwsu",
+    "images": [
+      {
+        "url": "https://i.scdn.co/image/ab67757000003b82effc073974225eec27614922",
+        "height": 64,
+        "width": 64
+      },
+      {
+        "url": "https://i.scdn.co/image/ab6775700000ee85effc073974225eec27614922",
+        "height": 300,
+        "width": 300
+      }
+    ],
+    "type": "user",
+    "uri": "spotify:user:31qkq5ojsq7cedj6b7q2ydh3zwsu",
+    "followers": {
+      "href": null,
+      "total": 0
+    },
+    "country": "TW",
+    "product": "free",
+    "explicit_content": {
+      "filter_enabled": false,
+      "filter_locked": false
+    },
+    "email": "a25023423@gmail.com"
+  },
+  "emails": [
+    {
+      "value": "a25023423@gmail.com",
+      "type": null
+    }
+  ]
+}

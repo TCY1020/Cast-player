@@ -18,8 +18,11 @@ module.exports = {
       play_time: {
         type: Sequelize.STRING
       },
-      description: {
+      images: {
         type: Sequelize.STRING
+      },
+      description: {
+        type: Sequelize.TEXT
       },
       created_at: {
         allowNull: false,

@@ -18,7 +18,8 @@ module.exports = (sequelize, DataTypes) => {
     PodcasterId: DataTypes.STRING,
     episodeTitle: DataTypes.STRING,
     playTime: DataTypes.STRING,
-    description: DataTypes.STRING
+    images: DataTypes.STRING,
+    description: DataTypes.TEXT
   }, {
     sequelize,
     modelName: 'Podcast',

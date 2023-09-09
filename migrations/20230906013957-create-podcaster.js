@@ -21,6 +21,9 @@ module.exports = {
       cover: {
         type: Sequelize.STRING
       },
+      introduce: {
+        type: Sequelize.TEXT
+      },
       created_at: {
         allowNull: false,
         type: Sequelize.DATE

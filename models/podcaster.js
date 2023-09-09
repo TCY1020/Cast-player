@@ -23,7 +23,8 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     programName: DataTypes.STRING,
     issuerName: DataTypes.STRING,
-    cover: DataTypes.STRING
+    cover: DataTypes.STRING,
+    introduce: DataTypes.TEXT
   }, {
     sequelize,
     modelName: 'Podcaster',

@@ -2,27 +2,18 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.createTable('Podcasts', {
+    await queryInterface.createTable('Favorites', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      Podcaster_id: {
+      User_id: {
         type: Sequelize.STRING
       },
-      episode_title: {
+      Podcast_id: {
         type: Sequelize.STRING
-      },
-      play_time: {
-        type: Sequelize.STRING
-      },
-      images: {
-        type: Sequelize.STRING
-      },
-      description: {
-        type: Sequelize.TEXT
       },
       created_at: {
         allowNull: false,
@@ -35,6 +26,6 @@ module.exports = {
     })
   },
   async down (queryInterface, Sequelize) {
-    await queryInterface.dropTable('Podcasts')
+    await queryInterface.dropTable('Favorites')
   }
 }

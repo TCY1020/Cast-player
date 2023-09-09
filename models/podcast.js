@@ -12,13 +12,19 @@ module.exports = (sequelize, DataTypes) => {
     static associate (models) {
       // define association here
       Podcast.belongsTo(models.Podcaster, { foreignKey: 'PodcasterId' })
+      Podcast.belongsToMany(models.User, {
+        through: models.Favorite,
+        foreignKey: 'PodcastId',
+        as: 'FavoriteUsers'
+      })
     }
   }
   Podcast.init({
     PodcasterId: DataTypes.STRING,
     episodeTitle: DataTypes.STRING,
     playTime: DataTypes.STRING,
-    description: DataTypes.STRING
+    images: DataTypes.STRING,
+    description: DataTypes.TEXT
   }, {
     sequelize,
     modelName: 'Podcast',

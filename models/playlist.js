@@ -20,6 +20,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Playlist.init({
+    icon: DataTypes.STRING,
     name: DataTypes.STRING,
     UserId: DataTypes.STRING
   }, {

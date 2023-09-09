@@ -26,6 +26,32 @@ module.exports = app => {
         name: display_name,
         avatar: images[0].url
       })
+      const list = [
+        {
+          userId: user.id,
+          name: '通勤清單',
+          icon: '🚌'
+        }, {
+          userId: user.id,
+          name: '學習清單',
+          icon: '📚'
+        }, {
+          userId: user.id,
+          name: '睡前清單',
+          icon: '💤'
+        }, {
+          userId: user.id,
+          name: '我的 Podcast',
+          icon: '⛪'
+        }
+      ]
+      await list.forEach(data => {
+        Playlist.create({
+          UserId: data.userId,
+          icon: data.icon,
+          name: data.name
+        })
+      })
       cb(null, user)
     } catch (err) {
       console.log(err)

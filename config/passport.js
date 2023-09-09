@@ -1,8 +1,11 @@
 const passport = require('passport')
 const SpotifyStrategy = require('passport-spotify').Strategy
+const passportJWT = require('passport-jwt')
 const jwt = require('jsonwebtoken')
-const { User } = require('../models')
+const { User, Playlist, Podcast } = require('../models')
 const bcrypt = require('bcrypt')
+const JWTStrategy = passportJWT.Strategy
+const ExtractJWT = passportJWT.ExtractJwt
 
 module.exports = app => {
   app.use(passport.initialize())
@@ -29,6 +32,24 @@ module.exports = app => {
     }
   }
   ))
+
+  const jwtOptions = {
+    jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
+    secretOrKey: process.env.JWT_SECRET
+  }
+  passport.use(new JWTStrategy(jwtOptions, async (jwtPayload, cb) => {
+    try {
+      const user = await User.findByPk(jwtPayload.id, {
+        include: [
+          Playlist,
+          { model: Podcast, as: 'FavoritePodcasts' }
+        ]
+      })
+      cb(null, user)
+    } catch (err) {
+      cb(err)
+    }
+  }))
 
   passport.serializeUser((user, done) => {
     done(null, user.id)

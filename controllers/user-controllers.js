@@ -1,7 +1,8 @@
 const passport = require('passport')
 const jwt = require('jsonwebtoken')
+const userServices = require('../services/user-services')
 
-const userServices = {
+const userController = {
   spotifyLogin: async (req, res, next) => {
     try {
       passport.authenticate('spotify', {
@@ -21,6 +22,9 @@ const userServices = {
     } catch (err) {
       console.log(err)
     }
+  },
+  getUserPlaylist: (req, res, next) => {
+    userServices.getUserPlaylist(req, (err, data) => err ? next(err) : res.status(200).json(data))
   }
 }
-module.exports = userServices
+module.exports = userController

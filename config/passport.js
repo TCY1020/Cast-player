@@ -15,14 +15,15 @@ module.exports = app => {
   }, async (accessToken, refreshToken, expires_in, profile, cb) => {
     try {
       const { email, images, display_name } = profile._json
-      const user = await User.findOne({ where: { email } })
+      let user = await User.findOne({ where: { email } })
       if (user) return cb(null, user)
-      await User.create({
+      user = await User.create({
         email,
         password: '12345678',
         name: display_name,
         avatar: images[0].url
       })
+      cb(null, user)
     } catch (err) {
       console.log(err)
     }

@@ -9,6 +9,7 @@ module.exports = {
         program_name: faker.commerce.product(),
         issuer_name: faker.person.fullName(),
         cover: `https://loremflickr.com/320/240/album,music/?random=${Math.random() * 100}`,
+        introduce: faker.lorem.sentence({ min: 5, max: 15 }),
         created_at: new Date(),
         updated_at: new Date()
       }))

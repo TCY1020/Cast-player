@@ -21,7 +21,8 @@ module.exports = {
         Podcaster_id: list[index],
         episode_title: faker.commerce.productName(),
         play_time: formattedTime(faker.date.between({ from: '2020-01-01T00:00:00.000Z', to: '2020-01-01T00:59:00.000Z' })),
-        description: faker.lorem.sentence({ min: 3, max: 5 }),
+        images: `https://loremflickr.com/320/240/album,music/?random=${Math.random() * 100}`,
+        description: faker.lorem.sentence({ min: 5, max: 15 }),
         created_at: new Date(),
         updated_at: new Date()
       }))

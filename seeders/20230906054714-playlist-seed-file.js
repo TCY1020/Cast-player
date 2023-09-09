@@ -25,10 +25,6 @@ module.exports = {
         ...user,
         name: '我的podcast'
       })
-      list.push({
-        ...user,
-        name: '已收藏'
-      })
     })
     await queryInterface.bulkInsert('Playlists',
       Array.from({ length: list.length }, (_, index) => ({

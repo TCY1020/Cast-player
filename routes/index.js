@@ -10,6 +10,6 @@ router.get('/api/auth/spotify', passport.authenticate('spotify', {
 })) // 向 spotify 要求email、public_profile資料
 
 router.get('/api/auth/spotify/callback', userController.spotifyLogin)
-router.get('/api/user/:id/playlist', userController.getUserPlaylist)
+router.get('/api/user/:id/playlist', authenticated, userController.getUserPlaylist)
 router.use('/', apiErrorHandler)
 module.exports = router

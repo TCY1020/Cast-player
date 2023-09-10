@@ -10,7 +10,7 @@ const app = express()
 const cors = require('cors')
 
 const port = process.env.PORT || 3000
-const usePassport = require('./config/passport')
+const passport = require('./config/passport')
 
 app.use(cors())
 app.use(express.urlencoded({ extended: true }))
@@ -20,7 +20,8 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }))
-usePassport(app)
+app.use(passport.initialize())
+app.use(passport.session())
 
 app.use(router)
 

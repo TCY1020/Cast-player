@@ -1,9 +1,9 @@
 const passport = require('../config/passport')
 
 const authenticated = (req, res, next) => {
-  passport.authenticated('jwt', { session: false }, (err, user) => {
-    if (err || !user) return res.status(401).json({ status: 'error', message: '沒登入' })
+  passport.authenticate('jwt', { session: false }, (err, user) => {
     req.user = user
+    if (err || !user) return res.status(401).json({ status: 'error', message: '沒登入' })
     next()
   })(req, res, next)
 }

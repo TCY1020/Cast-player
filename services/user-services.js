@@ -4,6 +4,7 @@ const userServices = {
   getUserPlaylist: async (req, cb) => {
     try {
       const { id } = req.params
+      if (req.user.id !== Number(id)) throw new Error('無權進入')
       const user = await User.findByPk(id, {
         include: [
           Playlist

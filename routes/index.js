@@ -17,5 +17,6 @@ router.get('/api/user/:id/playlist', authenticated, userController.getUserPlayli
 
 // playlist
 router.get('/api/playlist/:playlistId', authenticated, playlistController.getPlaylistPodcaster)
+router.put('/api/playlist/:playlistId', authenticated, playlistController.putPlaylist)
 router.use('/', apiErrorHandler)
 module.exports = router

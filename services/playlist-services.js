@@ -32,6 +32,19 @@ const playlistServices = {
     } catch (err) {
       cb(err)
     }
+  },
+  postPlaylist: async (req, cb) => {
+    try {
+      const { name } = req.body
+      const UserId = req.user.id
+      const playlistCreate = await Playlist.create({
+        name,
+        UserId
+      })
+      cb(null, playlistCreate)
+    } catch (err) {
+      cb(err)
+    }
   }
 }
 module.exports = playlistServices

@@ -6,6 +6,9 @@ const playlistController = {
   },
   putPlaylist: (req, res, next) => {
     playlistServices.putPlaylist(req, (err, data) => err ? next(err) : res.json(data))
+  },
+  postPlaylist: (req, res, next) => {
+    playlistServices.postPlaylist(req, (err, data) => err ? next(err) : res.json(data))
   }
 }
 

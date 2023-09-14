@@ -3,6 +3,7 @@ const router = express.Router()
 const passport = require('passport')
 const userController = require('../controllers/user-controllers')
 const playlistController = require('../controllers/playlist-controller')
+const playlistContentController = require('../controllers/playlistContent-controller')
 const { authenticated } = require('../middleware/auth')
 const { apiErrorHandler } = require('../middleware/error-handler')
 
@@ -20,5 +21,8 @@ router.get('/api/playlist/:playlistId', authenticated, playlistController.getPla
 router.put('/api/playlist/:playlistId', authenticated, playlistController.putPlaylist)
 router.delete('/api/playlist/:playlistId', authenticated, playlistController.deletePlaylist)
 router.post('/api/playlist', authenticated, playlistController.postPlaylist)
+
+// playlist Content
+router.post('/api/playlist/:playlistId/podcaster', authenticated, playlistContentController.postPodcaster)
 router.use('/', apiErrorHandler)
 module.exports = router

@@ -17,12 +17,12 @@ router.get('/api/auth/spotify/callback', userController.spotifyLogin)
 router.get('/api/user/:id/playlist', authenticated, userController.getUserPlaylist)
 
 // playlist
-router.get('/api/playlist/:playlistId', authenticated, playlistController.getPlaylistPodcaster)
-router.put('/api/playlist/:playlistId', authenticated, playlistController.putPlaylist)
-router.delete('/api/playlist/:playlistId', authenticated, playlistController.deletePlaylist)
+router.get('/api/playlist/:PlaylistId', authenticated, playlistController.getPlaylistPodcaster)
+router.put('/api/playlist/:PlaylistId', authenticated, playlistController.putPlaylist)
+router.delete('/api/playlist/:PlaylistId', authenticated, playlistController.deletePlaylist)
 router.post('/api/playlist', authenticated, playlistController.postPlaylist)
 
 // playlist Content
-router.post('/api/playlist/:playlistId/podcaster', authenticated, playlistContentController.postPodcaster)
+router.post('/api/playlist/:PlaylistId/podcaster', authenticated, playlistContentController.postPodcaster)
 router.use('/', apiErrorHandler)
 module.exports = router

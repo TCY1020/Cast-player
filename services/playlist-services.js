@@ -45,6 +45,18 @@ const playlistServices = {
     } catch (err) {
       cb(err)
     }
+  },
+  deletePlaylist: async (req, cb) => {
+    try {
+      const { playlistId } = req.params
+      const playlist = await Playlist.findByPk(playlistId)
+      if (req.user.id !== Number(playlist.UserId)) throw new Error('無權更改')
+      if (!playlist) throw new Error('該分類不存在')
+      const playlistDelete = await playlist.destroy()
+      cb(null, playlistDelete)
+    } catch (err) {
+      cb(err)
+    }
   }
 }
 module.exports = playlistServices

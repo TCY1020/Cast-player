@@ -9,6 +9,9 @@ const playlistController = {
   },
   postPlaylist: (req, res, next) => {
     playlistServices.postPlaylist(req, (err, data) => err ? next(err) : res.json(data))
+  },
+  deletePlaylist: (req, res, next) => {
+    playlistServices.deletePlaylist(req, (err, data) => err ? next(err) : res.json(data))
   }
 }
 

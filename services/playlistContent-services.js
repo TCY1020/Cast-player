@@ -21,6 +21,23 @@ const playlistContentServices = {
     } catch (err) {
       cb(err)
     }
+  },
+  deletePodcaster: async (req, cb) => {
+    try {
+      const { PlaylistId } = req.params
+      const { PodcasterId } = req.body
+      const playlist = await Playlist.findByPk(PlaylistId)
+      if (req.user.id !== Number(playlist.UserId)) throw new Error('無權更改')
+      if (!playlist) throw new Error('該分類不存在')
+      const playlistContent = await PlaylistContent.findOne({
+        where: { PlaylistId, PodcasterId }
+      })
+      if (!playlistContent) throw new Error('該資料不存在')
+      const playlistContentDelete = await playlistContent.destroy()
+      cb(null, playlistContentDelete)
+    } catch (err) {
+      cb(err)
+    }
   }
 }
 

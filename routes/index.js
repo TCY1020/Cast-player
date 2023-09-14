@@ -24,5 +24,6 @@ router.post('/api/playlist', authenticated, playlistController.postPlaylist)
 
 // playlist Content
 router.post('/api/playlist/:PlaylistId/podcaster', authenticated, playlistContentController.postPodcaster)
+router.delete('/api/playlist/:PlaylistId/podcaster', authenticated, playlistContentController.deletePodcaster)
 router.use('/', apiErrorHandler)
 module.exports = router
